@@ -81,7 +81,7 @@ beforeAll(async () => {
 
   // install mod sign ecdsa
   const { operation: install_module } = await accountContract["install_module"]({
-    module_type_id: 4,
+    module_type_id: 3,
     contract_id: modEcdsaSign.address
   }, { onlyOperation: true });
 
@@ -111,7 +111,7 @@ afterAll(() => {
 it("install module", async () => {
   // install validator
   const { operation: install_module } = await accountContract["install_module"]({
-    module_type_id: 2,
+    module_type_id: 1,
     contract_id: modSign.address
   }, { onlyOperation: true });
 
