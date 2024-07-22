@@ -8,21 +8,8 @@ message account_id {
    bytes value = 1 [(koinos.btype) = ADDRESS];
 }
 
-message config_storage {
-   repeated uint32 only_entry_points = 1;
-   uint32 threshold = 2;
-}
-
-message add_only_entry_point_args {
-   uint32 entry_point = 1;
-}
-
-message remove_only_entry_point_args {
-  uint32 entry_point = 1;
-}
-
-message get_only_entry_points_result {
-  repeated uint32 value = 1;
+message threshold {
+   uint32 value = 1;
 }
 
 message set_threshold {

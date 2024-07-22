@@ -1,5 +1,5 @@
 import { LocalKoinos } from "@roamin/local-koinos";
-import { Contract, Provider, Signer, Transaction } from "koilib";
+import { Contract, Provider, Signer, Transaction, utils } from "koilib";
 import path from "path";
 import { randomBytes } from "crypto";
 import { beforeAll, afterAll, it, expect } from "@jest/globals";
@@ -11,6 +11,8 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 jest.setTimeout(600000);
+
+const TEST_ENTRY_POINT = 2676412545;
 
 const localKoinos = new LocalKoinos();
 const provider = localKoinos.getProvider() as unknown as Provider;
@@ -41,11 +43,13 @@ const accountContract = new Contract({
   provider,
 }).functions;
 
-const modContract = new Contract({
+const mod = new Contract({
   id: modSign.getAddress(),
   abi: modAbi,
   provider,
-}).functions;
+});
+const modContract = mod.functions;
+const modSerializer = mod.serializer;
 
 beforeAll(async () => {
   // start local-koinos node
@@ -108,11 +112,18 @@ afterAll(() => {
   localKoinos.stopNode();
 });
 
-it("install module", async () => {
+it("install module in scope (entry_point=test)", async () => {
+  const scope = await modSerializer.serialize({
+    entry_point: TEST_ENTRY_POINT
+  }, "scope");
+
   // install validator
   const { operation: install_module } = await accountContract["install_module"]({
     module_type_id: 1,
-    contract_id: modSign.address
+    contract_id: modSign.address,
+    scopes: [
+      utils.encodeBase64url(scope)
+    ]
   }, { onlyOperation: true });
 
   const tx = new Transaction({
@@ -141,32 +152,6 @@ it("install module", async () => {
   const { result: r2 } = await modContract["get_threshold"]();
   expect(r2.value).toStrictEqual(1);
 });
-
-it("account add 'test' to only entry point list", async () => {
-  // prepare operation
-  const { operation: test } = await accountContract['test']({}, { onlyOperation: true });
-
-  // add 'test' to only entry points
-  const { operation: add_only_entry_point } = await modContract['add_only_entry_point']({
-    entry_point: test.call_contract.entry_point
-  }, { onlyOperation: true });
-
-  // send operations
-  const tx = new Transaction({
-    signer: accountSign,
-    provider
-  });
-  await tx.pushOperation(add_only_entry_point);
-
-  const receipt = await tx.send();
-  await tx.wait();
-
-  expect(receipt).toBeDefined();
-
-  const { result } = await modContract['get_only_entry_points']();
-  expect(result.value).toContain(test.call_contract.entry_point);
-});
-
 
 it("account test operation ECDSA signed", async () => {
   // prepare operation
