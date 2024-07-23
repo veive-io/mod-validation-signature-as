@@ -1,6 +1,6 @@
 {
   "name": "@veive/mod-validation-signature-as",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Validation signature module for Veive",
   "author": {
     "name": "veive",
@@ -46,7 +46,7 @@
     "@types/node": "^16.18.3",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
-    "@veive/mod-sign-ecdsa-as": "^1.0.3",
+    "@veive/mod-sign-ecdsa-as": "^1.0.4",
     "as-proto": "npm:@koinos/as-proto@1.0.1",
     "assemblyscript": "^0.27.1",
     "dotenv": "^16.0.3",
