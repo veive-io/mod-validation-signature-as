@@ -6,6 +6,7 @@ import { IAccount, account } from "@veive/account-as";
 const THRESHOLD_SPACE_ID = 1;
 const ACCOUNT_SPACE_ID = 2;
 const DEFAULT_THRESHOLD : u32 = 1;
+const ALLOW_ENTRY_POINT = 1090552691;
 export class ModValidationSignature extends ModValidation {
   callArgs: System.getArgumentsReturn | null;
 
@@ -117,6 +118,9 @@ export class ModValidationSignature extends ModValidation {
     result.name = "Signature validator";
     result.description = "Module to validate transaction signature";
     result.type_id = MODULE_VALIDATION_TYPE_ID;
+    result.scopes = [
+      new modvalidation.scope(ALLOW_ENTRY_POINT)
+    ];
     return result;
   }
 
