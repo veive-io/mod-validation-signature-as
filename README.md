@@ -1,10 +1,10 @@
 # **Mod Validation Signature**
 
-![image](https://github.com/user-attachments/assets/02e7aa23-0b7c-445a-b033-838dd5218f35)
-
 ## **Overview**
 
 `ModValidationSignature` is a specialized validation module within the Veive protocol, designed to verify the authenticity of transaction signatures. Unlike modules that implement signature verification algorithms directly, `ModValidationSignature` delegates this responsibility to dedicated "sign" modules. This separation allows for a modular and flexible approach to handling different signature methods, such as ECDSA or WebAuthn. By default, this module is installed in the scope of the "allow" entry point, ensuring that operations are pre-authorized with valid signatures before execution.
+
+![image](https://github.com/user-attachments/assets/02e7aa23-0b7c-445a-b033-838dd5218f35)
 
 ## **Purpose**
 
