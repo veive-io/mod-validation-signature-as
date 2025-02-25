@@ -4,7 +4,7 @@ import path from "path";
 import { randomBytes } from "crypto";
 import { beforeAll, afterAll, it, expect } from "@jest/globals";
 import * as modAbi from "../build/modvalidationsignature-abi.json";
-import * as modSignEcdsaAbi from "../node_modules/@veive-io/mod-sign-ecdsa-as/dist/modsignecdsa-abi.json";
+import * as modSignMnemonicAbi from "../node_modules/@veive-io/mod-sign-mnemonic-as/dist/modsignmnemonic-abi.json";
 import * as modSignWebauthnAbi from "../node_modules/@veive-io/mod-sign-webauthn-as/dist/modsignwebauthn-abi.json";
 import * as accountAbi from "@veive-io/account-as/dist/account-abi.json";
 import * as dotenv from "dotenv";
@@ -28,7 +28,7 @@ const modSign = new Signer({
   provider,
 });
 
-const modEcdsaSign = new Signer({
+const modMnemonicSign = new Signer({
   privateKey: randomBytes(32).toString("hex"),
   provider,
 });
@@ -82,11 +82,11 @@ beforeAll(async () => {
     modAbi
   );
 
-  // deploy mod sign ecdsa contract
+  // deploy mod sign mnemonic contract
   await localKoinos.deployContract(
-    modEcdsaSign.getPrivateKey("wif"),
-    path.join(__dirname, "../node_modules/@veive-io/mod-sign-ecdsa-as/dist/release/ModSignEcdsa.wasm"),
-    modSignEcdsaAbi
+    modMnemonicSign.getPrivateKey("wif"),
+    path.join(__dirname, "../node_modules/@veive-io/mod-sign-mnemonic-as/dist/release/ModSignMnemonic.wasm"),
+    modSignMnemonicAbi
   );
 
   // deploy mod sign webauthn contract
@@ -96,10 +96,10 @@ beforeAll(async () => {
     modSignWebauthnAbi
   );
 
-  // install mod sign ecdsa
-  const { operation: install_module_ecdsa } = await accountContract["install_module"]({
+  // install mod sign mnemonic
+  const { operation: install_module_mnemonic } = await accountContract["install_module"]({
     module_type_id: 3,
-    contract_id: modEcdsaSign.address
+    contract_id: modMnemonicSign.address
   }, { onlyOperation: true });
 
   // install mod sign webauthn
@@ -115,9 +115,9 @@ beforeAll(async () => {
 
   const { operation: exec1 } = await accountContract["execute_user"]({
     operation: {
-      contract_id: install_module_ecdsa.call_contract.contract_id,
-      entry_point: install_module_ecdsa.call_contract.entry_point,
-      args: install_module_ecdsa.call_contract.args
+      contract_id: install_module_mnemonic.call_contract.contract_id,
+      entry_point: install_module_mnemonic.call_contract.entry_point,
+      args: install_module_mnemonic.call_contract.args
     }
   }, { onlyOperation: true });
 
@@ -185,7 +185,7 @@ it("install module in scopes: contract_upload, transaction_application, contract
   expect(r2.value).toStrictEqual(1);
 });
 
-it("account test operation ECDSA signed", async () => {
+it("account test operation mnemonic signed", async () => {
   // prepare operation
   const { operation: test } = await accountContract["test"]({}, { onlyOperation: true });
 
@@ -216,7 +216,7 @@ it("account test operation ECDSA signed", async () => {
 });
 
 
-it("account test operation WRONG ECDSA signed", async () => {
+it("account test operation WRONG mnemonic signed", async () => {
   // prepare operation
   const { operation: test } = await accountContract["test"]({}, { onlyOperation: true });
 

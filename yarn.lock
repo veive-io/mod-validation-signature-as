@@ -1736,21 +1736,6 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.3.0.tgz#d06bbb384ebcf6c505fde1c3d0ed4ddffe0aaff8"
   integrity sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==
 
-"@veive-io/account-as@^1.1.0", "@veive-io/account-as@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@veive-io/account-as/-/account-as-1.1.1.tgz#ec9bdec4368e8f6abb27c5904331c16360aac7ef"
-  integrity sha512-gk1ryDG4K3EtaHElYnkYcWqFjOBaPt5ED4QSRn/us7ROKYJKiN5Xnf/LvH4qFxxbseMCSZFLuwoElbhiSen3Mw==
-  dependencies:
-    "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
-    "@koinosbox/contracts" "^2.1.4"
-    "@koinosbox/hdkoinos" "1.0.1"
-    "@veive-io/mod-execution-as" "^1.0.0"
-    "@veive-io/mod-hooks-as" "^1.0.0"
-    "@veive-io/mod-sign-as" "^1.0.0"
-    "@veive-io/mod-validation-as" "^1.0.0"
-    koilib "^8.0.0"
-    koinos-precompiler-as "^1.6.0"
-
 "@veive-io/account-as@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@veive-io/account-as/-/account-as-2.0.0.tgz#c645e02b64eab8301f043cff294602de58bf6513"
@@ -1766,32 +1751,10 @@
     koilib "^8.0.0"
     koinos-precompiler-as "^1.6.0"
 
-"@veive-io/mod-execution-as@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-execution-as/-/mod-execution-as-1.0.0.tgz#f33277476e08e72c4a29894542cf2016590656e9"
-  integrity sha512-W5lghmXq7XKMac+xy/XR4TDzTBQn0HYHctLZDO6JN3WsUwLPE/5euyweRBQaLo7R4+8a9GRecxNolVoDrDHbFg==
-  dependencies:
-    "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
-    "@koinosbox/contracts" "^2.1.4"
-    "@koinosbox/hdkoinos" "1.0.1"
-    koilib "^8.0.0"
-    koinos-precompiler-as "^1.6.0"
-
 "@veive-io/mod-execution-as@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@veive-io/mod-execution-as/-/mod-execution-as-2.0.0.tgz#93ed95a0bf014e26b19152b282ad8406dc3b4677"
   integrity sha512-FxzV3JbQPjLUYom23VjsAsBR7kFmHlO5yw6UrHRAIi8Ck+lfDJtCVx30Zg/02sG/u2knPEo0enofut9iCzfPTw==
-  dependencies:
-    "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
-    "@koinosbox/contracts" "^2.1.4"
-    "@koinosbox/hdkoinos" "1.0.1"
-    koilib "^8.0.0"
-    koinos-precompiler-as "^1.6.0"
-
-"@veive-io/mod-hooks-as@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-hooks-as/-/mod-hooks-as-1.0.0.tgz#41ec4f8bcc131192831b40374452dd3aaafa4ffe"
-  integrity sha512-17TBie7U0j+3C7lNlMtsYIbWcj1tDPWHBDt9aU1c5A79ljHgNXkJZ5tap0fkB3ZsLb4klbuKCZS1Ipb91fthng==
   dependencies:
     "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
     "@koinosbox/contracts" "^2.1.4"
@@ -1810,17 +1773,6 @@
     koilib "^8.0.0"
     koinos-precompiler-as "^1.6.0"
 
-"@veive-io/mod-sign-as@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-as/-/mod-sign-as-1.0.0.tgz#d625dee85595fb28fd4e1cc31a4c03f098cecd22"
-  integrity sha512-q3aBrt3y7Ke1sh9sHhSOWAjPrdEVkEsmbi4Sot5GKwNKkPSSUe5xuthz+LdkfgDfmKAsvGDvOA0ml/omnU0Rsw==
-  dependencies:
-    "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
-    "@koinosbox/contracts" "^2.1.4"
-    "@koinosbox/hdkoinos" "1.0.1"
-    koilib "^8.0.0"
-    koinos-precompiler-as "^1.6.0"
-
 "@veive-io/mod-sign-as@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-as/-/mod-sign-as-2.0.0.tgz#5b244c1ee39166ffec11048ab5c2ce4ebc70dcd5"
@@ -1832,41 +1784,30 @@
     koilib "^8.0.0"
     koinos-precompiler-as "^1.6.0"
 
-"@veive-io/mod-sign-ecdsa-as@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-ecdsa-as/-/mod-sign-ecdsa-as-1.1.1.tgz#c092144d40d42c05a60c834098816ee90e6e7102"
-  integrity sha512-ZYn4ZCls+iToxAEFhCpuhG/VXR0iUy11blLDmzMugR0MUOp6zzOzfixPUxF3hti7SAZU9QrSpwXjvJewN08EVA==
+"@veive-io/mod-sign-mnemonic-as@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-mnemonic-as/-/mod-sign-mnemonic-as-2.0.0.tgz#9daac0141fb9d25a14477119d769086b6c7fad35"
+  integrity sha512-Cm7K0VOiLGCeQW7PoQHjzXW3wJuY2HdXfxL0mYklbws8mA8xlnDRMbtKMdYWbrL9V6b2AKpVWXBr/EmJm9pr5A==
   dependencies:
     "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
     "@koinosbox/contracts" "^2.1.4"
     "@koinosbox/hdkoinos" "1.0.1"
-    "@veive-io/account-as" "^1.1.0"
+    "@veive-io/account-as" "^2.0.0"
     koilib "^8.0.0"
     koinos-precompiler-as "^1.6.0"
 
-"@veive-io/mod-sign-webauthn-as@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-webauthn-as/-/mod-sign-webauthn-as-1.1.4.tgz#ef8b415d8433942b6082fe4bd3706dde8b03b04a"
-  integrity sha512-Jfo/T/e4vdCbVTGWCvbAvDE0sRMZCNrJvJpdZUS65Mp9XXNYaEY8jwFtI0ge3+ePJs/2HoL7nuRtkH/Eyk+8nA==
+"@veive-io/mod-sign-webauthn-as@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@veive-io/mod-sign-webauthn-as/-/mod-sign-webauthn-as-2.0.0.tgz#38ad5000af13b7d89c526d663a4373a69c7f2745"
+  integrity sha512-2NIguln1QXW5IQyZGg4pCFSNehUzq8jQZtSQaSpg9OR3rebMpjujjbbAtT5GhdXL1ImRIdCbikkTq9HLRRSylQ==
   dependencies:
     "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
     "@koinosbox/contracts" "^2.1.4"
     "@koinosbox/hdkoinos" "1.0.1"
-    "@veive-io/account-as" "^1.1.1"
+    "@veive-io/account-as" "^2.0.0"
     "@veive-io/verifier-p256" "^1.0.0"
     koilib "^8.0.0"
     koinos-precompiler-as "^1.5.1"
-
-"@veive-io/mod-validation-as@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@veive-io/mod-validation-as/-/mod-validation-as-1.0.0.tgz#b277289c454990c9a7e9e99d520dcdf0d37fc4dc"
-  integrity sha512-QA0h32kpzGZ7YN1nCUdieGg1VjWJ9mmQAo9ivPDVpDsg6DotntgqbuIeyNhBKlbnkGk/F50JvHfcItM2ashGkw==
-  dependencies:
-    "@koinos/sdk-as" "npm:@koinosbox/sdk-as@1.1.0-alpha.4"
-    "@koinosbox/contracts" "^2.1.4"
-    "@koinosbox/hdkoinos" "1.0.1"
-    koilib "^8.0.0"
-    koinos-precompiler-as "^1.6.0"
 
 "@veive-io/mod-validation-as@^2.0.0":
   version "2.0.0"
@@ -3060,7 +3001,7 @@ debug@~2.6.9:
   dependencies:
     ms "2.0.0"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha512-syBZ+rnAK3EgMsH2aYEOLUW7mZSY9Gb+0wUMCFsZvcmiz+HigA0LOcq/HoQqVuGG+EKykunc7QG2bzrponfaSw==
@@ -4392,7 +4333,7 @@ import-local@^3.0.2:
     pkg-dir "^4.2.0"
     resolve-cwd "^3.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==
@@ -5795,11 +5736,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha512-bSYo8Pc/f0qAkr8fPJydpJjtrHiSynYfYBjtANIgXv5xEf1WlTC63dIDlgu0s9dmTvzRu1+JJTxcIAHe+sH0FQ==
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -5808,32 +5744,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha512-2wlI0JRAGX8WEf4Gm1p/mv/SZ+jLijpj0jyaE/AXeuQphzCgD8ZQW4oSpoN8JAopujOFGU3KMuq7qfHBWlGpjQ==
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha512-S8dUjWr7SUT/X6TBIQ/OYoCHo1Stu1ZRy6uMUSKqzFnZp5G5RyQizSm6kvxD2Ewyy6AVfMg4AToeZzKfF99T5w==
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha512-ev5SP+iFpZOugyab/DEUQxUeZP5qyciVTlgQ1f4Vlw7VUcCD8fVnyIqVUEIaoFH9zjAqdgi69KiofzvVmda/ZQ==
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha512-GTkC6YMprrJZCYU3zcqZj+jkXkrXzq3IPBcF/fIPpNEAB4hZEtXU8zp/RwKOvZl43NUmwDbyRk3+ZTbeRdEBXA==
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha512-RrL9VxMEPyDMHOd9uFbvMe8X55X16/cGM5IgOKgRElQZutpX89iS6vwl64duTV1/16w5JY7tuFNXqoekmh1EmA==
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -5854,11 +5768,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha512-L4/arjjuq4noiUJpt3yS6KIKDtJwNe2fIYgMqyYYKoeIfV1iEqvPwhCx23o+R9dzouGihDAPN1dTIRWa7zk8tw==
 
 lodash.truncate@^4.4.2:
   version "4.4.2"
